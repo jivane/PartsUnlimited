@@ -285,48 +285,6 @@
         ]
       },
       {
-        "name": "Stores",
-        "columns": [
-          {
-            "name": "StoreId",
-            "dataType": "int64",
-            "sourceColumn": "StoreId",
-            "sourceProviderType": "int"
-          },
-          {
-            "name": "Name",
-            "dataType": "string",
-            "sourceColumn": "Name",
-            "sourceProviderType": "nvarchar"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "Stores",
-            "dataView": "full",
-            "source": {
-              "type": "query",
-              "query": " SELECT [dbo].[Stores].* FROM [dbo].[Stores] ",
-              "dataSource": "SqlAzure pulejivanedev.database.windows.net PartsUnlimitedDB"
-            }
-          }
-        ],
-        "annotations": [
-          {
-            "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [dbo].[Stores].* FROM [dbo].[Stores] "
-          },
-          {
-            "name": "_TM_ExtProp_DbTableName",
-            "value": "Stores"
-          },
-          {
-            "name": "_TM_ExtProp_DbSchemaName",
-            "value": "dbo"
-          }
-        ]
-      },
-      {
         "name": "OrderDetails",
         "columns": [
           {
