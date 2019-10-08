@@ -1,0 +1,414 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlAzure pulejivanedev.database.windows.net PartsUnlimitedDB",
+        "connectionString": "Data Source=pulejivanedev.database.windows.net;Initial Catalog=PartsUnlimitedDB;Persist Security Info=true;User ID=adminuser;Encrypt=true;TrustServerCertificate=false",
+        "impersonationMode": "impersonateServiceAccount",
+        "provider": "System.Data.SqlClient",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlAzure"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "Products",
+        "columns": [
+          {
+            "name": "ProductId",
+            "dataType": "int64",
+            "sourceColumn": "ProductId",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "SkuNumber",
+            "dataType": "string",
+            "sourceColumn": "SkuNumber",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "CategoryId",
+            "dataType": "int64",
+            "sourceColumn": "CategoryId",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "RecommendationId",
+            "dataType": "int64",
+            "sourceColumn": "RecommendationId",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "Title",
+            "dataType": "string",
+            "sourceColumn": "Title",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "Price",
+            "dataType": "double",
+            "sourceColumn": "Price",
+            "sourceProviderType": "decimal"
+          },
+          {
+            "name": "SalePrice",
+            "dataType": "double",
+            "sourceColumn": "SalePrice",
+            "sourceProviderType": "decimal"
+          },
+          {
+            "name": "ProductArtUrl",
+            "dataType": "string",
+            "sourceColumn": "ProductArtUrl",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "Description",
+            "dataType": "string",
+            "sourceColumn": "Description",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "Created",
+            "dataType": "dateTime",
+            "sourceColumn": "Created",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime"
+          },
+          {
+            "name": "ProductDetails",
+            "dataType": "string",
+            "sourceColumn": "ProductDetails",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "Inventory",
+            "dataType": "int64",
+            "sourceColumn": "Inventory",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "LeadTime",
+            "dataType": "int64",
+            "sourceColumn": "LeadTime",
+            "sourceProviderType": "int"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Products",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Products].* FROM [dbo].[Products] ",
+              "dataSource": "SqlAzure pulejivanedev.database.windows.net PartsUnlimitedDB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Products].* FROM [dbo].[Products] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Products"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Categories",
+        "columns": [
+          {
+            "name": "CategoryId",
+            "dataType": "int64",
+            "sourceColumn": "CategoryId",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "Description",
+            "dataType": "string",
+            "sourceColumn": "Description",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "ImageUrl",
+            "dataType": "string",
+            "sourceColumn": "ImageUrl",
+            "sourceProviderType": "nvarchar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Categories",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Categories].* FROM [dbo].[Categories] ",
+              "dataSource": "SqlAzure pulejivanedev.database.windows.net PartsUnlimitedDB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Categories].* FROM [dbo].[Categories] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Categories"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Orders",
+        "columns": [
+          {
+            "name": "OrderId",
+            "dataType": "int64",
+            "sourceColumn": "OrderId",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "OrderDate",
+            "dataType": "dateTime",
+            "sourceColumn": "OrderDate",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime"
+          },
+          {
+            "name": "Username",
+            "dataType": "string",
+            "sourceColumn": "Username",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "Address",
+            "dataType": "string",
+            "sourceColumn": "Address",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "sourceColumn": "State",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "sourceColumn": "PostalCode",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "sourceColumn": "Phone",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "sourceColumn": "Email",
+            "sourceProviderType": "nvarchar"
+          },
+          {
+            "name": "Total",
+            "dataType": "double",
+            "sourceColumn": "Total",
+            "sourceProviderType": "decimal"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Orders",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Orders].* FROM [dbo].[Orders] ",
+              "dataSource": "SqlAzure pulejivanedev.database.windows.net PartsUnlimitedDB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Orders].* FROM [dbo].[Orders] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Orders"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Stores",
+        "columns": [
+          {
+            "name": "StoreId",
+            "dataType": "int64",
+            "sourceColumn": "StoreId",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name",
+            "sourceProviderType": "nvarchar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Stores",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Stores].* FROM [dbo].[Stores] ",
+              "dataSource": "SqlAzure pulejivanedev.database.windows.net PartsUnlimitedDB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Stores].* FROM [dbo].[Stores] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Stores"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "OrderDetails",
+        "columns": [
+          {
+            "name": "OrderDetailId",
+            "dataType": "int64",
+            "sourceColumn": "OrderDetailId",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "OrderId",
+            "dataType": "int64",
+            "sourceColumn": "OrderId",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "ProductId",
+            "dataType": "int64",
+            "sourceColumn": "ProductId",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "Count",
+            "dataType": "int64",
+            "sourceColumn": "Count",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "double",
+            "sourceColumn": "UnitPrice",
+            "sourceProviderType": "decimal"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "OrderDetails",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[OrderDetails].* FROM [dbo].[OrderDetails] ",
+              "dataSource": "SqlAzure pulejivanedev.database.windows.net PartsUnlimitedDB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[OrderDetails].* FROM [dbo].[OrderDetails] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "OrderDetails"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "e487b236-8ab3-435c-963b-199b120ad1f5",
+        "fromTable": "Products",
+        "fromColumn": "CategoryId",
+        "toTable": "Categories",
+        "toColumn": "CategoryId"
+      },
+      {
+        "name": "51a32679-6684-496c-90fc-44537639d44b",
+        "fromTable": "OrderDetails",
+        "fromColumn": "OrderDetailId",
+        "toTable": "Products",
+        "toColumn": "ProductDetails"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
